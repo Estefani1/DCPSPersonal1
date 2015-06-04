@@ -1,0 +1,28 @@
+.fondo{
+        padding-top: 5%;
+	height: 90%;
+	text-align: center;
+	background: #E0ECFF;
+	border-radius: 50px 0px 50px 0px;
+	-moz-border-radius: 50px 0px 50px 0px;
+	-webkit-border-radius: 50px 0px 50px 0px;
+
+}
+
+.evaluar_vi{
+    padding-top: 2%;
+	height: 90%;
+	text-align: center;
+	background: #E0ECFF;
+	border-radius: 50px 0px 50px 0px;
+	-moz-border-radius: 50px 0px 50px 0px;
+	-webkit-border-radius: 50px 0px 50px 0px;
+}
+
+.letra{
+    color: black;
+}
+
+.letra:hover{
+    color: black;
+}
