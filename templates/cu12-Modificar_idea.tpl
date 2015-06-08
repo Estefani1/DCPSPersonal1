@@ -14,7 +14,7 @@
 
                             </select>
                     
-                                <a class="des" id="desc"><b>Descripcion actual:</b></a> 
+                                <a class="des" id="desc"><b>Descripción actual:</b></a> 
                          
                             {section loop=$ide name=i }
                                 <a  class="idea_descripcion" id="idea_descripcion_{$ide[i]->get('nombre')}" > {$ide[i]->get('descripcion')}</a>                 
