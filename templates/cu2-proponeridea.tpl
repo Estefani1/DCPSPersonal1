@@ -1,4 +1,5 @@
-<body  {if isset($alerta)} onload="{$alerta}"{/if}>
+
+<body {if isset($alerta2)} onload="{$alerta2}"{/if}>
 <div class="col-md-4 col-md-offset-3 fondo tr">
 <form action="{$gvar.l_global}cu2-proponeridea.php?option=add" method="post">
   <p>

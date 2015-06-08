@@ -1,23 +1,24 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-06-04 03:35:57
+<?php /* Smarty version Smarty-3.0.9, created on 2015-06-08 02:30:28
          compiled from "C:/wamp/www/ProyectoDCPS/templates\cu2-proponeridea.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:17911556fab7dc8b607-63245695%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:39885574e2244f6a03-59612909%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '9c979bfe8d797c5ac1b3743edfabecbab8ea87d0' => 
     array (
       0 => 'C:/wamp/www/ProyectoDCPS/templates\\cu2-proponeridea.tpl',
-      1 => 1433381039,
+      1 => 1433723424,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '17911556fab7dc8b607-63245695',
+  'nocache_hash' => '39885574e2244f6a03-59612909',
   'function' => 
   array (
   ),
   'has_nocache_code' => false,
 )); /*/%%SmartyHeaderCode%%*/?>
-<body  <?php if (isset($_smarty_tpl->getVariable('alerta',null,true,false)->value)){?> onload="<?php echo $_smarty_tpl->getVariable('alerta')->value;?>
+
+<body <?php if (isset($_smarty_tpl->getVariable('alerta2',null,true,false)->value)){?> onload="<?php echo $_smarty_tpl->getVariable('alerta2')->value;?>
 "<?php }?>>
 <div class="col-md-4 col-md-offset-3 fondo tr">
 <form action="<?php echo $_smarty_tpl->getVariable('gvar')->value['l_global'];?>
