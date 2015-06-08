@@ -9,28 +9,22 @@ class c_revisar_diseno extends super_controller {
             $message1 = "Por favor califique el diseño";
         }
         if (!is_empty($message1))
-            throw_exception($message1);
+            $this->engine->assign(alerta, "ms.alertify_error()");
 
         $diseno = new diseno($this->post);
         $codp = $this->post->codigo;
         $cali = $this->post->evaluacion;
         if (is_empty($codp)) {
-            throw_exception("Error, falta seleccionar diseño");
+            $this->engine->assign(alerta, "ms.alertify_error()");
         }
         if (is_empty($cali)) {
-            throw_exception("Error, falta evaluar diseño");
+            $this->engine->assign(alerta, "ms.alertify_error()");
         }
 
         $this->orm->connect();
         $this->orm->update_data("revision", $diseno);
         $this->orm->close();
-
-        $this->type_warning = "success";
-        $this->msg_warning = "revision exitosa";
-
-        $this->temp_aux = 'message.tpl';
-        $this->engine->assign('type_warning', $this->type_warning);
-        $this->engine->assign('msg_warning', $this->msg_warning);
+        $this->engine->assign(alerta, "ms.alertify_revisar_diseno()");
     }
 
     public function display() {
@@ -41,19 +35,17 @@ class c_revisar_diseno extends super_controller {
         $this->orm->close();
 
         if (!isset($diseno)) {
-            $this->error = 1;
-            $this->msg_warning = "No hay diseño para revisar";
-            $this->engine->assign('type_warning', $this->type_warning);
-            $this->engine->assign('msg_warning', $this->msg_warning);
-            $this->temp_aux = 'message.tpl';
+            $this->engine->assign(alerta, "ms.alertify_revisar_diseno_error()");
             //header($this->session['header']);
         }
 
         $this->engine->assign('diseno', $diseno);
         $this->engine->assign('title', 'Revisar diseño');
-
+        $this->engine->display('header.tpl');
+        $this->engine->display('opciones_especialista.tpl');
         $this->engine->display($this->temp_aux);
         $this->engine->display('cu8-revisar_diseno.tpl');
+        $this->engine->display('footer.tpl');
     }
 
     public function run() {

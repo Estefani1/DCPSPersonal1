@@ -26,3 +26,13 @@
 .letra:hover{
     color: black;
 }
+
+.fondo2{
+    padding-top: 3%;
+	height: 90%;
+	text-align: center;
+	background: #E0ECFF;
+	border-radius: 50px 0px 50px 0px;
+	-moz-border-radius: 50px 0px 50px 0px;
+	-webkit-border-radius: 50px 0px 50px 0px;
+}

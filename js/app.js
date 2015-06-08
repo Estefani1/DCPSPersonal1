@@ -42,10 +42,28 @@ managerScreen = {
     
     alertify_definir_software: function(){
         alertify.log("Software definido correctamente", "Success", 10000);      
+    },
+    
+    alertify_realizar_diseno: function(){
+        alertify.log("Diseno exitoso", "Success", 10000);      
+    },
+    
+    alertify_revisar_diseno: function(){
+        alertify.log("Revision exitosa", "Success", 10000);      
+    },
+    
+    alertify_revisar_diseno_error: function(){
+        alertify.log("No hay diseño para revisar", "Error", 10000);      
+    },
+    
+    alertify_registrar_prediseno: function(){
+        alertify.log("Completo", "Success", 10000);      
+    },
+    
+    alertify_asignar_viabilidad: function(){
+        alertify.log("Asignacion exitosa", "Success", 10000);      
     }
     
-       
-   
 };
 
 
