@@ -19,7 +19,7 @@ class c_Programar_reunion extends super_controller {
             // $this->engine->assign('fecha', $this->post->fecha);
         }
         if (!is_empty($message1) || !is_empty($message2) || !is_empty($message3))
-            throw_exception($message1 . $message2 . $message3);
+            $this->engine->assign(alerta, "ms.alertify_error()");
 
         $reun = new reunion($this->post);
         $idear = new idea();
@@ -32,11 +32,7 @@ class c_Programar_reunion extends super_controller {
         $this->orm->insert_data("normal", $reun);
         $this->orm->update_data("reunion", $idear);
         $this->orm->close();
-        $this->msg_warning = "Programacion de la reunion con Exito";
-        $this->temp_aux = 'message.tpl';
-        $this->type_warning = "success";
-        $this->engine->assign('type_warning', $this->type_warning);
-        $this->engine->assign('msg_warning', $this->msg_warning);
+        $this->engine->assign(alerta, "ms.alertify_programar_reunion()");
     }
 
     public function selectideas() {

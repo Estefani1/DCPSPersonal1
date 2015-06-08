@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-06-04 03:35:03
+<?php /* Smarty version Smarty-3.0.9, created on 2015-06-08 04:28:16
          compiled from "C:/wamp/www/ProyectoDCPS/templates\cu6-definirrsoftware.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:28796556fab4744d888-59584449%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:184545574fdc0cd7686-32104359%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'b05cddb77062256494012413045ba51832fe69f5' => 
     array (
       0 => 'C:/wamp/www/ProyectoDCPS/templates\\cu6-definirrsoftware.tpl',
-      1 => 1433381701,
+      1 => 1433730450,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '28796556fab4744d888-59584449',
+  'nocache_hash' => '184545574fdc0cd7686-32104359',
   'function' => 
   array (
   ),
@@ -20,6 +20,8 @@ $_smarty_tpl->decodeProperties(array (
 <!--Para usar la ñ-->
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <script lang="javascript" src="js/jquery-2.1.3.min.js"></script>
+<body <?php if (isset($_smarty_tpl->getVariable('alerta',null,true,false)->value)){?> onload="<?php echo $_smarty_tpl->getVariable('alerta')->value;?>
+"<?php }?>>
 <div class="col-md-4 col-md-offset-3 fondo tr">
     <form action="<?php echo $_smarty_tpl->getVariable('gvar')->value['l_global'];?>
 cu6-definirsoftware.php?option=add" method="post">

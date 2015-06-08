@@ -38,7 +38,7 @@ class c_proponeridea extends super_controller {
         $cidea = $this->orm->get_objects("idea");
         $this->orm->close();
         if (!is_empty($cidea)){
-            throw_exception("Nombre de idea ya esta en uso");
+            $this->engine->assign(alerta2, "ms.alertify_nombre_usado()");
         }
     }
     

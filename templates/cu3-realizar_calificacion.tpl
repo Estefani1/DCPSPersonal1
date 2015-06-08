@@ -1,6 +1,7 @@
 <!--Para usar la ñ-->
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <html>
+    <body {if isset($alerta)} onload="{$alerta}"{/if}>
     <div class="col-md-4 col-md-offset-3 fondo tr">
     <script lang="javascript" src="js/jquery-2.1.3.min.js"></script>
     <body>    

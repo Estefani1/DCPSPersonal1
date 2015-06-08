@@ -18,18 +18,12 @@ class c_definirsoftware extends super_controller {
             $message3 = "Por favor seleccione el lenguaje";
         }
         if (!is_empty($message1) || !is_empty($message2) || !is_empty($message3) )
-            throw_exception($message1 . $message2 . $message3 );
+            $this->engine->assign(alerta, "ms.alertify_error()");
 
         $this->orm->connect();
         $this->orm->insert_data("normal", $software);
         $this->orm->close();
-
-        $this->type_warning = "success";
-        $this->msg_warning = "software definido correctamente";
-        $this->temp_aux = 'message.tpl';
-        $this->engine->assign('type_warning', $this->type_warning);
-        $this->engine->assign('msg_warning', $this->msg_warning
-        );
+        $this->engine->assign(alerta, "ms.alertify_definir_software()");
     }
 
 

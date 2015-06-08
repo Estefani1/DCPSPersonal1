@@ -2,6 +2,7 @@
 <!--Para usar la ñ-->
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <script lang="javascript" src="js/jquery-2.1.3.min.js"></script>
+<body {if isset($alerta)} onload="{$alerta}"{/if}>
 <div class="col-md-4 col-md-offset-3 fondo tr">
     <form action="{$gvar.l_global}cu5-definir_dispositivo.php?option=add" method="post">
         <b>Definir dispositivo</b>

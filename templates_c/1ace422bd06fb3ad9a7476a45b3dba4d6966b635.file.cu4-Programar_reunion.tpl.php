@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-06-04 03:13:14
+<?php /* Smarty version Smarty-3.0.9, created on 2015-06-08 03:57:15
          compiled from "C:/wamp/www/ProyectoDCPS/templates\cu4-Programar_reunion.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:2375556fa62a0bfd57-67624826%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:4725574f67b2c3676-44996721%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '1ace422bd06fb3ad9a7476a45b3dba4d6966b635' => 
     array (
       0 => 'C:/wamp/www/ProyectoDCPS/templates\\cu4-Programar_reunion.tpl',
-      1 => 1433380391,
+      1 => 1433728466,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2375556fa62a0bfd57-67624826',
+  'nocache_hash' => '4725574f67b2c3676-44996721',
   'function' => 
   array (
   ),
@@ -21,6 +21,8 @@ $_smarty_tpl->decodeProperties(array (
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <form action="<?php echo $_smarty_tpl->getVariable('gvar')->value['l__global'];?>
 cu4-Programar_reunion.php?option=agregar_reunion" method="post">
+    <body <?php if (isset($_smarty_tpl->getVariable('alerta',null,true,false)->value)){?> onload="<?php echo $_smarty_tpl->getVariable('alerta')->value;?>
+"<?php }?>>
     <div class="col-md-4 col-md-offset-3 fondo tr">
     
                 Ingrese el código de la reunion: 
@@ -31,7 +33,7 @@ cu4-Programar_reunion.php?option=agregar_reunion" method="post">
                 <br/>
                 Seleccionar idea:
                 <select class="form-control" name="ddl">
-                        <option value=""> Seleccione idea</option>
+                        <option value="">Seleccione idea</option>
                         <?php unset($_smarty_tpl->tpl_vars['smarty']->value['section']['i']);
 $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['loop'] = is_array($_loop=$_smarty_tpl->getVariable('ide')->value) ? count($_loop) : max(0, (int)$_loop); unset($_loop);
 $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['name'] = 'i';
@@ -63,7 +65,7 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['last']       = ($_smart
 
                     </select>
                         <br/>
-                <input class="btn-default" type="submit" value="Programar reunion" name="reunion" />
+                <input class="btn btn-primary" type="submit" value="Programar reunion" name="reunion" />
 
            
 </form>
