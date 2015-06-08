@@ -46,6 +46,9 @@ class c_Registrar_prediseno extends super_controller {
         $this->orm->connect();
         $this->orm->read_data(array("calificacion"), $options);
         $califica = $this->orm->get_objects("calificacion");
+        if(is_empty($califica)){
+            $this->engine->assign(alerta, "ms.alertify_error()");
+        }
         foreach ($califica as $key => $cal) {
             if($cal->get('valor') < 3){
                 $etapa = 'No aceptada';
