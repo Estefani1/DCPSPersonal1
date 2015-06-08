@@ -38,7 +38,15 @@ class c_Modificar_idea extends super_controller {
 
         $this->selectideas();
         $this->engine->display('header.tpl');
-        $this->engine->display('opciones_analista.tpl');
+        if($this->session['id'] == 1234){
+            $this->engine->display('opciones_especialista.tpl');
+        }else if($this->session['id'] == 2345){
+            $this->engine->display('opciones_analista.tpl');
+        }else if($this->session['id'] == 4567){
+            $this->engine->display('opciones_ingeniero.tpl');
+        }else if($this->session['id'] == 5678){
+            $this->engine->display('opciones_arquitecto.tpl');
+        }
         $this->engine->display($this->temp_aux);
         $this->engine->display('cu12-Modificar_idea.tpl');
         $this->engine->display('footer.tpl');
