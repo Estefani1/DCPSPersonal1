@@ -21,17 +21,13 @@ class c_Registrar_prediseno extends super_controller {
             $message3 = "Ya existe un prediseño con este codigo";
         }
         if (!is_empty($message1) || !is_empty($message2) || !is_empty($message3))
-            throw_exception($message1 . $message2 . $message3);
+            $this->engine->assign(alerta, "ms.alertify_error()");
 
         $pred = new prediseno($this->post);
         $this->orm->connect();
         $this->orm->insert_data("insert", $pred);
         $this->orm->close();
-        $this->msg_warning = "Programacion de la reunion con Exito";
-        $this->temp_aux = 'message.tpl';
-        $this->type_warning = "Completo";
-        $this->engine->assign('type_warning', $this->type_warning);
-        $this->engine->assign('msg_warning', $this->msg_warning);
+        $this->engine->assign(alerta, "ms.alertify_registrar_prediseno()");
         
       
     }
@@ -50,6 +46,9 @@ class c_Registrar_prediseno extends super_controller {
         $this->orm->connect();
         $this->orm->read_data(array("calificacion"), $options);
         $califica = $this->orm->get_objects("calificacion");
+        if(is_empty($califica)){
+            $this->engine->assign(alerta, "ms.alertify_registrar_prediseno_error()");
+        }
         foreach ($califica as $key => $cal) {
             if($cal->get('valor') < 3){
                 $etapa = 'No aceptada';
@@ -68,8 +67,11 @@ class c_Registrar_prediseno extends super_controller {
 
     public function display() {
     
+        $this->engine->display('header.tpl');
+        $this->engine->display('opciones_analista.tpl');
         $this->engine->display($this->temp_aux);
         $this->engine->display('cu9-Registrar_prediseno.tpl');
+        $this->engine->display('footer.tpl');
     }
 
     public function run() {

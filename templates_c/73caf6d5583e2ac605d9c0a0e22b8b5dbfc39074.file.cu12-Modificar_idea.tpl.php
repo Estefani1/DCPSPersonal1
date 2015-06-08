@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-06-04 06:10:15
+<?php /* Smarty version Smarty-3.0.9, created on 2015-06-08 18:34:31
          compiled from "C:/wamp/www/ProyectoDCPS/templates\cu12-Modificar_idea.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:206995557415b68c370-79604341%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:12495575c417f10f50-27643469%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '73caf6d5583e2ac605d9c0a0e22b8b5dbfc39074' => 
     array (
       0 => 'C:/wamp/www/ProyectoDCPS/templates\\cu12-Modificar_idea.tpl',
-      1 => 1433203406,
+      1 => 1433781249,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '206995557415b68c370-79604341',
+  'nocache_hash' => '12495575c417f10f50-27643469',
   'function' => 
   array (
   ),
@@ -20,15 +20,14 @@ $_smarty_tpl->decodeProperties(array (
 
 <html>
     <script lang="javascript" src="js/jquery-2.1.3.min.js"></script>
-    <body>    
+    <body <?php if (isset($_smarty_tpl->getVariable('alerta',null,true,false)->value)){?> onload="<?php echo $_smarty_tpl->getVariable('alerta')->value;?>
+"<?php }?>>    
         <form action="<?php echo $_smarty_tpl->getVariable('gvar')->value['l__global'];?>
 cu12-Modificar_idea.php?option=Modificaridea" method="post">
+             <div class="col-md-4 col-md-offset-3 fondo tr">
 
-            Modificar idea:
-            <table>
-                <tbody>
-                    <tr>
-                        <td><select name="ddl" id="mySelect" onchange="myFunction()" >
+            <b>Modificar idea:</b>
+            <select class="form-control" name="ddl" id="mySelect" onchange="myFunction()" >
                                 <option > Seleccione idea</option>
                                 <?php unset($_smarty_tpl->tpl_vars['smarty']->value['section']['i']);
 $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['loop'] = is_array($_loop=$_smarty_tpl->getVariable('ide')->value) ? count($_loop) : max(0, (int)$_loop); unset($_loop);
@@ -60,15 +59,10 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['last']       = ($_smart
 </option>                 
                                 <?php endfor; endif; ?>
 
-                            </select></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <a  class="des" id="desc"> Descripcion actual :</a> 
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>  
+                            </select>
+                    
+                                <a class="des" id="desc"><b>Descripcion actual:</b></a> 
+                         
                             <?php unset($_smarty_tpl->tpl_vars['smarty']->value['section']['i']);
 $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['loop'] = is_array($_loop=$_smarty_tpl->getVariable('ide')->value) ? count($_loop) : max(0, (int)$_loop); unset($_loop);
 $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['name'] = 'i';
@@ -98,24 +92,17 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['last']       = ($_smart
 </a>                 
                             <?php endfor; endif; ?>
 
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="des1" id="desc1">
+                        
+                        <div class="des1" id="desc1">
                             <a >Nueva descripcion:</a> </br>
 
-                            <textarea id="textAread_id" name = "descripcion" rows = "8" cols = "40" class = "input" WRAP ></textarea> </br>
+                            <textarea clss="form-control" id="textAread_id" name = "descripcion" rows = "8" cols = "40" class = "input" WRAP ></textarea> </br>
                             <!-- <input type="button" onclick="val()" value="Modificar">   -->
-                            <input type="submit" value="Modificar" />
+                            <input class="btn btn-primary"type="submit" value="Modificar" />
 
 
-                        </td>
-
-
-                    </tr>
-
-                </tbody>
-            </table>
+                        </div>
+ 
 
             <script>
                 function myFunction() {
@@ -137,5 +124,12 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['last']       = ($_smart
                 });
             </script>
         </form>
+                            
+ </div>
+<div class="col-md-3">
+
+</div>
+</body>
+</div>
     </body>
 </html>

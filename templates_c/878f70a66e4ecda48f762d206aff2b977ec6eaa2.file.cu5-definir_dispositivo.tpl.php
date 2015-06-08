@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-06-04 03:22:59
+<?php /* Smarty version Smarty-3.0.9, created on 2015-06-08 04:18:08
          compiled from "C:/wamp/www/ProyectoDCPS/templates\cu5-definir_dispositivo.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:32246556fa873862dd3-40776159%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:187375574fb60e012d9-02143433%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '878f70a66e4ecda48f762d206aff2b977ec6eaa2' => 
     array (
       0 => 'C:/wamp/www/ProyectoDCPS/templates\\cu5-definir_dispositivo.tpl',
-      1 => 1433380977,
+      1 => 1433729835,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '32246556fa873862dd3-40776159',
+  'nocache_hash' => '187375574fb60e012d9-02143433',
   'function' => 
   array (
   ),
@@ -21,6 +21,8 @@ $_smarty_tpl->decodeProperties(array (
 <!--Para usar la ñ-->
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <script lang="javascript" src="js/jquery-2.1.3.min.js"></script>
+<body <?php if (isset($_smarty_tpl->getVariable('alerta',null,true,false)->value)){?> onload="<?php echo $_smarty_tpl->getVariable('alerta')->value;?>
+"<?php }?>>
 <div class="col-md-4 col-md-offset-3 fondo tr">
     <form action="<?php echo $_smarty_tpl->getVariable('gvar')->value['l_global'];?>
 cu5-definir_dispositivo.php?option=add" method="post">

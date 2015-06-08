@@ -15,7 +15,7 @@ class c_realizar_diseno extends super_controller {
             $message3 = "Por favor seleccione el software";
         }
         if (!is_empty($message1) || !is_empty($message2) || !is_empty($message3))
-            throw_exception($message1 . $message2 . $message3);
+            $this->engine->assign(alerta, "ms.alertify_error()");
 
         settype($disen, 'object');
         $disen->codigo = $this->post->codigo;
@@ -35,12 +35,7 @@ class c_realizar_diseno extends super_controller {
             move_uploaded_file($_FILES['imagen']['tmp_name'], 'C:/wamp/www/ProyectoDCPS/images/' . $_FILES['imagen']['name']);
         }
 
-        $this->type_warning = "success";
-        $this->msg_warning = "Diseño exitoso";
-
-        $this->temp_aux = 'message.tpl';
-        $this->engine->assign('type_warning', $this->type_warning);
-        $this->engine->assign('msg_warning', $this->msg_warning);
+        $this->engine->assign(alerta, "ms.alertify_realizar_diseno()");
     }
 
     public function select_dispositivo_software() {
@@ -57,8 +52,11 @@ class c_realizar_diseno extends super_controller {
 
     public function display() {
         $this->select_dispositivo_software();
+        $this->engine->display('header.tpl');
+        $this->engine->display('opciones_ingeniero.tpl');
         $this->engine->display($this->temp_aux);
         $this->engine->display('cu7-realizar_diseno.tpl');
+        $this->engine->display('footer.tpl');
         $this->orm->close();
     }
 

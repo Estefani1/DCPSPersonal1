@@ -1,44 +1,37 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-06-04 06:10:19
+<?php /* Smarty version Smarty-3.0.9, created on 2015-06-08 06:29:43
          compiled from "C:/wamp/www/ProyectoDCPS/templates\cu10-asignar_viabilidad.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:27601556fcfab099d22-48448990%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:308355751a374432e6-94904627%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '066220a35ee21225ccdf5d124d1cf1f90a4e1d25' => 
     array (
       0 => 'C:/wamp/www/ProyectoDCPS/templates\\cu10-asignar_viabilidad.tpl',
-      1 => 1433203406,
+      1 => 1433737766,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '27601556fcfab099d22-48448990',
+  'nocache_hash' => '308355751a374432e6-94904627',
   'function' => 
   array (
   ),
   'has_nocache_code' => false,
 )); /*/%%SmartyHeaderCode%%*/?>
-<!--Para usar la ñ-->
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<html>
-    <script lang="javascript" src="js/jquery-2.1.3.min.js"></script>
-    <body>    
+<!--Para usar la Ã±-->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script lang="javascript" src="js/jquery-2.1.3.min.js"></script>  
         <form action="<?php echo $_smarty_tpl->getVariable('gvar')->value['l__global'];?>
 cu10-asignar_viabilidad.php?option=add" method="post">
-
-            <table width="40%" border="0" cellpadding="0" cellspacing="5">   
-                <tbody>
-                    <tr>
-                        <td><b>Código de la viabilidad</b></td>
-                        <td>
-                            <input type="text" name="codigo" />
-                        </td>
-                    </tr>
-
-
-                    <tr>
-                        <td><b>Seleccione el prediseño</b></td>
-                        <td>
-                            <select name="prediseno" id="mySelect" onchange="myFunction()" >
+            <body <?php if (isset($_smarty_tpl->getVariable('alerta',null,true,false)->value)){?> onload="<?php echo $_smarty_tpl->getVariable('alerta')->value;?>
+"<?php }?>>  
+            <div class="col-md-4 col-md-offset-3 fondo2 tr">
+                        <b>CÃ³digo de la viabilidad</b>
+                        
+                            <input class="form-control" type="text" name="codigo" />
+                       <br/>
+                        <b>Seleccione el prediseÃ±o</b>
+                        
+                            <select class="form-control" name="prediseno" id="mySelect" onchange="myFunction()" >
                                 <option>Prediseno</option>
                                 <?php unset($_smarty_tpl->tpl_vars['smarty']->value['section']['i']);
 $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['loop'] = is_array($_loop=$_smarty_tpl->getVariable('predis')->value) ? count($_loop) : max(0, (int)$_loop); unset($_loop);
@@ -69,12 +62,11 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['last']       = ($_smart
 </option>                 
                                 <?php endfor; endif; ?>
                             </select>
-                        </td>
-                    </tr>
-                    <tr  class="cideaprediseno" id="idideaprediseno">
-                        <td>
-                            <b>Idea del dispositivo:</b></td>
-                        <td>
+                        <br/>
+                    <div  class="cideaprediseno" id="idideaprediseno">
+                        
+                            <b>Idea del dispositivo:</b>
+                        
                             <?php unset($_smarty_tpl->tpl_vars['smarty']->value['section']['i']);
 $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['loop'] = is_array($_loop=$_smarty_tpl->getVariable('predis')->value) ? count($_loop) : max(0, (int)$_loop); unset($_loop);
 $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['name'] = 'i';
@@ -99,34 +91,27 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['index_next'] = $_smarty
 $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['first']      = ($_smarty_tpl->tpl_vars['smarty']->value['section']['i']['iteration'] == 1);
 $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['last']       = ($_smarty_tpl->tpl_vars['smarty']->value['section']['i']['iteration'] == $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['total']);
 ?>
-                                <a class="cidea" id="ididea_<?php echo $_smarty_tpl->getVariable('predis')->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]->get('codigo');?>
+                                <a class="cidea letra" id="ididea_<?php echo $_smarty_tpl->getVariable('predis')->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]->get('codigo');?>
 "> <?php echo $_smarty_tpl->getVariable('predis')->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]->get('idea');?>
 </a>
                             <?php endfor; endif; ?>
-
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><b>Resultado</b></td>
-                        <td>
-                            <select name="resultado" >
+                        
+                    </div>
+                    <br/>
+                        <b>Resultado</b>
+                        
+                            <select class="form-control" name="resultado" >
                                 <option >Seleccione</option>
                                 <option >Viable</option>
                                 <option >No viable</option>
                                 <option >Modificable</option>
                             </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><b>Causa</b></td>
-                        <td>             <textarea name = "causa" rows = "8" cols = "40" ></textarea> </td>
-                    </tr>
-                    <tr><td></td>
-                        <td>  <input type="submit" value="Evaluar Viabilidad" /></td>
-                    </tr>
-                </tbody>
-            </table>
+                        <br/>
+                        <b>Causa</b>
+                        <textarea  class="form-control" name = "causa" rows = "8" cols = "40" ></textarea>
+                        <br/>
+                        <input class="btn btn-primary" type="submit" value="Evaluar Viabilidad" />
+                    
             <script>
                 function myFunction() {
                     var x = $("#mySelect").val();

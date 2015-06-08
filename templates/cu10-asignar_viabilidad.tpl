@@ -1,62 +1,46 @@
-<!--Para usar la ñ-->
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<html>
-    <script lang="javascript" src="js/jquery-2.1.3.min.js"></script>
-    <body>    
+<!--Para usar la Ã±-->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script lang="javascript" src="js/jquery-2.1.3.min.js"></script>  
         <form action="{$gvar.l__global}cu10-asignar_viabilidad.php?option=add" method="post">
-
-            <table width="40%" border="0" cellpadding="0" cellspacing="5">   
-                <tbody>
-                    <tr>
-                        <td><b>Código de la viabilidad</b></td>
-                        <td>
-                            <input type="text" name="codigo" />
-                        </td>
-                    </tr>
-
-
-                    <tr>
-                        <td><b>Seleccione el prediseño</b></td>
-                        <td>
-                            <select name="prediseno" id="mySelect" onchange="myFunction()" >
+            <body {if isset($alerta)} onload="{$alerta}"{/if}>  
+            <div class="col-md-4 col-md-offset-3 fondo2 tr">
+                        <b>CÃ³digo de la viabilidad</b>
+                        
+                            <input class="form-control" type="text" name="codigo" />
+                       <br/>
+                        <b>Seleccione el prediseÃ±o</b>
+                        
+                            <select class="form-control" name="prediseno" id="mySelect" onchange="myFunction()" >
                                 <option>Prediseno</option>
                                 {section loop=$predis name=i }
                                     <option value="{$predis[i]->get(codigo)}">{$predis[i]->get('codigo')}</option>                 
                                 {/section}
                             </select>
-                        </td>
-                    </tr>
-                    <tr  class="cideaprediseno" id="idideaprediseno">
-                        <td>
-                            <b>Idea del dispositivo:</b></td>
-                        <td>
+                        <br/>
+                    <div  class="cideaprediseno" id="idideaprediseno">
+                        
+                            <b>Idea del dispositivo:</b>
+                        
                             {section loop=$predis name=i }
-                                <a class="cidea" id="ididea_{$predis[i]->get(codigo)}"> {$predis[i]->get('idea')}</a>
+                                <a class="cidea letra" id="ididea_{$predis[i]->get(codigo)}"> {$predis[i]->get('idea')}</a>
                             {/section}
-
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><b>Resultado</b></td>
-                        <td>
-                            <select name="resultado" >
+                        
+                    </div>
+                    <br/>
+                        <b>Resultado</b>
+                        
+                            <select class="form-control" name="resultado" >
                                 <option >Seleccione</option>
                                 <option >Viable</option>
                                 <option >No viable</option>
                                 <option >Modificable</option>
                             </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><b>Causa</b></td>
-                        <td>             <textarea name = "causa" rows = "8" cols = "40" ></textarea> </td>
-                    </tr>
-                    <tr><td></td>
-                        <td>  <input type="submit" value="Evaluar Viabilidad" /></td>
-                    </tr>
-                </tbody>
-            </table>
+                        <br/>
+                        <b>Causa</b>
+                        <textarea  class="form-control" name = "causa" rows = "8" cols = "40" ></textarea>
+                        <br/>
+                        <input class="btn btn-primary" type="submit" value="Evaluar Viabilidad" />
+                    
             <script>
                 function myFunction() {
                     var x = $("#mySelect").val();

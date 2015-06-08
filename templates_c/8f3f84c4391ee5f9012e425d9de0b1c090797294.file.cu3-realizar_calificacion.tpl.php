@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-06-04 06:10:09
+<?php /* Smarty version Smarty-3.0.9, created on 2015-06-08 03:15:51
          compiled from "C:/wamp/www/ProyectoDCPS/templates\cu3-realizar_calificacion.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:8795556fcfa1c86723-41314550%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:271975574ecc7c7b870-22549570%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '8f3f84c4391ee5f9012e425d9de0b1c090797294' => 
     array (
       0 => 'C:/wamp/www/ProyectoDCPS/templates\\cu3-realizar_calificacion.tpl',
-      1 => 1433381618,
+      1 => 1433725188,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '8795556fcfa1c86723-41314550',
+  'nocache_hash' => '271975574ecc7c7b870-22549570',
   'function' => 
   array (
   ),
@@ -20,6 +20,8 @@ $_smarty_tpl->decodeProperties(array (
 <!--Para usar la ñ-->
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <html>
+    <body <?php if (isset($_smarty_tpl->getVariable('alerta',null,true,false)->value)){?> onload="<?php echo $_smarty_tpl->getVariable('alerta')->value;?>
+"<?php }?>>
     <div class="col-md-4 col-md-offset-3 fondo tr">
     <script lang="javascript" src="js/jquery-2.1.3.min.js"></script>
     <body>    

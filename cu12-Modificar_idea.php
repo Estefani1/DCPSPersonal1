@@ -6,10 +6,10 @@ class c_Modificar_idea extends super_controller {
 
     public function Modificaridea() {
         if ($this->post->descripcion == NULL) {
-            $message1 = "Ingrese Nueva descripcion por favor. ";
+            $message1 = "Ingrese nueva descripcion por favor. ";
         }
         if (!is_empty($message1))
-            throw_exception($message1);
+            $this->engine->assign(alerta, "ms.alertify_error()");
 
         $_SESSION['nombre'] = $this->post->ddl;
         //acà actualizo
@@ -20,11 +20,7 @@ class c_Modificar_idea extends super_controller {
         $this->orm->update_data("normal", $ide);
         $this->orm->close();
         //acà finaliza la actualizacion 
-        $this->msg_warning = "Modificacion de la idea exitosa";
-        $this->temp_aux = 'message.tpl';
-        $this->type_warning = "Completo";
-        $this->engine->assign('type_warning', $this->type_warning);
-        $this->engine->assign('msg_warning', $this->msg_warning);
+        $this->engine->assign(alerta, "ms.alertify_modificar_idea()");
     }
 
     public function selectideas() {
@@ -41,10 +37,11 @@ class c_Modificar_idea extends super_controller {
     public function display() {
 
         $this->selectideas();
+        $this->engine->display('header.tpl');
+        $this->engine->display('opciones_analista.tpl');
         $this->engine->display($this->temp_aux);
         $this->engine->display('cu12-Modificar_idea.tpl');
-        //    $this->engine->display('header.tpl');
-        //  $this->engine->display('footer.tpl');
+        $this->engine->display('footer.tpl');
     }
 
     public function run() {

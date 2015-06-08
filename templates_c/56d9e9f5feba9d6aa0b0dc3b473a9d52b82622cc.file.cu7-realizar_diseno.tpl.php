@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-05-25 09:46:48
+<?php /* Smarty version Smarty-3.0.9, created on 2015-06-08 05:38:55
          compiled from "C:/wamp/www/ProyectoDCPS/templates\cu7-realizar_diseno.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:53065562d368ed48c2-54420240%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:1828555750e4f46cd29-09273624%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '56d9e9f5feba9d6aa0b0dc3b473a9d52b82622cc' => 
     array (
       0 => 'C:/wamp/www/ProyectoDCPS/templates\\cu7-realizar_diseno.tpl',
-      1 => 1432540004,
+      1 => 1433734448,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '53065562d368ed48c2-54420240',
+  'nocache_hash' => '1828555750e4f46cd29-09273624',
   'function' => 
   array (
   ),
@@ -21,18 +21,21 @@ $_smarty_tpl->decodeProperties(array (
 
 <script lang="javascript" src="js/jquery-2.1.3.min.js"></script>
 <form action="<?php echo $_smarty_tpl->getVariable('gvar')->value['l_global'];?>
-cu7-realizar_diseno.php?option=add" method="post" enctype="multipart/form-data"> 
+cu7-realizar_diseno.php?option=add" method="post" enctype="multipart/form-data">
+    <body <?php if (isset($_smarty_tpl->getVariable('alerta',null,true,false)->value)){?> onload="<?php echo $_smarty_tpl->getVariable('alerta')->value;?>
+"<?php }?>>
+    <div class="col-md-4 col-md-offset-3 fondo tr">
 
     <b>Realizar diseño</b>
-    <table border="1">
+    <table border="0">
         <tbody>
             <tr>
                 <td><b>Código: </b></td>
-                <td> <input type="text" name="codigo"/></td>
+                <td> <input class="form-control" type="text" name="codigo"/></td>
             </tr>
             <tr>
                 <td><b>Dispositivo:</b></td>
-                <td><select name="dispositivo"  id="mySelect1" onchange="myFunction1()">
+                <td><select class="form-control" name="dispositivo"  id="mySelect1" onchange="myFunction1()">
                         <option>Seleccione</option>
                         <?php  $_smarty_tpl->tpl_vars['disp'] = new Smarty_Variable;
  $_from = $_smarty_tpl->getVariable('dispositivo')->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
@@ -47,7 +50,7 @@ if ($_smarty_tpl->_count($_from) > 0){
             </tr>
             <tr>
                 <td><b>Software:</b></td>
-                <td>  <select name="software" id="mySelect" onchange="myFunction()">
+                <td>  <select class="form-control" name="software" id="mySelect" onchange="myFunction()">
                         <option>Seleccione</option>
                         <?php unset($_smarty_tpl->tpl_vars['smarty']->value['section']['i']);
 $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['loop'] = is_array($_loop=$_smarty_tpl->getVariable('software')->value) ? count($_loop) : max(0, (int)$_loop); unset($_loop);
@@ -84,7 +87,7 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['last']       = ($_smart
         </tbody>
     </table></br>
 
-    <section class="cdetallesoftware" id="iddetallesoftware">
+    <section class="cdetallesoftware letra" id="iddetallesoftware">
         <b>Detalles del software:</b></br> 
         Lenguaje:
         <?php unset($_smarty_tpl->tpl_vars['smarty']->value['section']['i']);
@@ -111,13 +114,13 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['index_next'] = $_smarty
 $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['first']      = ($_smarty_tpl->tpl_vars['smarty']->value['section']['i']['iteration'] == 1);
 $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['last']       = ($_smarty_tpl->tpl_vars['smarty']->value['section']['i']['iteration'] == $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['total']);
 ?>
-            <a class="csoft" id="idsoft_<?php echo $_smarty_tpl->getVariable('software')->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]->get('codigo');?>
+            <a class="csoft letra" id="idsoft_<?php echo $_smarty_tpl->getVariable('software')->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]->get('codigo');?>
 ">  <?php echo $_smarty_tpl->getVariable('software')->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]->get('lenguaje');?>
 </a>  
         <?php endfor; endif; ?>
     </section>
-
-    <section class="cdetalledispositivo" id="iddetalledispositivo">
+    <br/>
+    <section class="cdetalledispositivo letra" id="iddetalledispositivo">
         <b>Detalles del dispositivo:</b></br>  
         <?php unset($_smarty_tpl->tpl_vars['smarty']->value['section']['i']);
 $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['loop'] = is_array($_loop=$_smarty_tpl->getVariable('dispositivo')->value) ? count($_loop) : max(0, (int)$_loop); unset($_loop);
@@ -143,17 +146,17 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['index_next'] = $_smarty
 $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['first']      = ($_smarty_tpl->tpl_vars['smarty']->value['section']['i']['iteration'] == 1);
 $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['last']       = ($_smarty_tpl->tpl_vars['smarty']->value['section']['i']['iteration'] == $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['total']);
 ?>
-            <a class="cdisp" id="iddisp_<?php echo $_smarty_tpl->getVariable('dispositivo')->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]->get('codigo');?>
-"> Funcion del dispositivo: <?php echo $_smarty_tpl->getVariable('dispositivo')->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]->get('funcion');?>
+            <a class="cdisp letra" id="iddisp_<?php echo $_smarty_tpl->getVariable('dispositivo')->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]->get('codigo');?>
+"> <b>Funcion del dispositivo:</b> <?php echo $_smarty_tpl->getVariable('dispositivo')->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]->get('funcion');?>
 </a> 
-            <a  class="cdisp1" id="iddisp1_<?php echo $_smarty_tpl->getVariable('dispositivo')->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]->get('codigo');?>
-">Costo del dispositivo:  <?php echo $_smarty_tpl->getVariable('dispositivo')->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]->get('costo');?>
+            <a  class="cdisp1 letra" id="iddisp1_<?php echo $_smarty_tpl->getVariable('dispositivo')->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]->get('codigo');?>
+"><b>Costo del dispositivo:</b>  <?php echo $_smarty_tpl->getVariable('dispositivo')->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]->get('costo');?>
 </a> 
         <?php endfor; endif; ?>
     </section>
-
-    <input type="file" name="imagen"/><br/><br/>
-    <input type="submit" value="Realizar Diseño"/>
+    <br/>
+    <input class="btn btn-primary" type="file" name="imagen"/><br/><br/>
+    <input class="btn btn-primary" type="submit" value="Realizar Diseño"/>
 
     <script>
         function myFunction() {
@@ -185,4 +188,10 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['last']       = ($_smart
     </script>
 
 </form>
+    </div>
+<div class="col-md-3">
+
+</div>
+</body>
+</div>
 

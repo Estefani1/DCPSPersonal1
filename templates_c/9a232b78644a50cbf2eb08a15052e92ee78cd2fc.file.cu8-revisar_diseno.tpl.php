@@ -1,35 +1,35 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-05-25 09:57:09
+<?php /* Smarty version Smarty-3.0.9, created on 2015-06-08 05:52:40
          compiled from "C:/wamp/www/ProyectoDCPS/templates\cu8-revisar_diseno.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:43785562d5d5b4c464-82416863%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:1370155751188b34068-17045076%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '9a232b78644a50cbf2eb08a15052e92ee78cd2fc' => 
     array (
       0 => 'C:/wamp/www/ProyectoDCPS/templates\\cu8-revisar_diseno.tpl',
-      1 => 1432540627,
+      1 => 1433735532,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '43785562d5d5b4c464-82416863',
+  'nocache_hash' => '1370155751188b34068-17045076',
   'function' => 
   array (
   ),
   'has_nocache_code' => false,
 )); /*/%%SmartyHeaderCode%%*/?>
-<!--Para usar la ñ-->
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<html>
+<!--Para usar la Ã±-->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<body <?php if (isset($_smarty_tpl->getVariable('alerta',null,true,false)->value)){?> onload="<?php echo $_smarty_tpl->getVariable('alerta')->value;?>
+"<?php }?>>
+    <div class="col-md-4 col-md-offset-3 fondo tr">
     <?php if (isset($_smarty_tpl->getVariable('diseno',null,true,false)->value)){?>
         <script lang="javascript" src="js/jquery-2.1.3.min.js"></script>
         <body>    
             <form action="<?php echo $_smarty_tpl->getVariable('gvar')->value['l__global'];?>
 cu8-revisar_diseno.php?option=add" method="post">
 
-                <table>
-                    <tbody>
-                    <b>Seleccionar prediseño: </b>
-                    <select name="codigo" id="mySelect" onchange="myFunction()">
+                    <b>Seleccionar prediseÃ±o: </b>
+                    <select class="form-control" name="codigo" id="mySelect" onchange="myFunction()">
                         <option value="Seleccione codigo">Seleccione codigo</option>
                         <?php unset($_smarty_tpl->tpl_vars['smarty']->value['section']['i']);
 $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['loop'] = is_array($_loop=$_smarty_tpl->getVariable('diseno')->value) ? count($_loop) : max(0, (int)$_loop); unset($_loop);
@@ -60,14 +60,9 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['last']       = ($_smart
 </option>                 
                         <?php endfor; endif; ?>
                     </select><br />
-                    <tr>
-                        <td>
-                            <a  class="des" id="desc"> Imagen del diseño:</a> 
-                        </td>
-                    </tr>
-                    <tr>
-
-                        <td>  
+                    
+                    <a class="des letra" id="desc"><b>Imagen del diseÃ±o:</b></a> 
+                         
                             <?php unset($_smarty_tpl->tpl_vars['smarty']->value['section']['i']);
 $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['loop'] = is_array($_loop=$_smarty_tpl->getVariable('diseno')->value) ? count($_loop) : max(0, (int)$_loop); unset($_loop);
 $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['name'] = 'i';
@@ -95,29 +90,23 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['last']       = ($_smart
                                 <a  class="res_viabilidad" id="res_viabilidad_<?php echo $_smarty_tpl->getVariable('diseno')->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]->get('codigo');?>
 " name="imagen" value="<?php echo $_smarty_tpl->getVariable('diseno')->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]->get('imagen');?>
 " > <div class="outter"><img src="images/<?php echo $_smarty_tpl->getVariable('diseno')->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]->get('imagen');?>
-" width="350" height="350" class="image-circle"/></div> </a>                 
+" width="200" height="200" class="image-circ"/></div> </a>                 
                                     <?php endfor; endif; ?>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="des1" id="desc1">
+                        
+                        <div class="des1" id="desc1">
                             <br />
-                            <a >Calificar diseño:</a> <br />
+                            <a class="letra"><b>Calificar diseÃ±o:</b></a> <br />
 
-                            <select name="evaluacion">
+                            <select class="form-control" name="evaluacion">
                                 <option>Seleccione</option>
-                                <option > aprobado</option>
-                                <option > No aprobado</option>
+                                <option>Aprobado</option>
+                                <option>No aprobado</option>
                             </select><br />
 
-                            <input type="submit" value="Enviar"/>
+                            <input class="btn btn-primary" type="submit" value="Enviar"/>
 
-                        </td>
-
-                    </tr>
-
-                    </tbody>
-                </table>
+                        </div>
+       
 
                 <script>
                     function myFunction() {
@@ -142,6 +131,11 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['last']       = ($_smart
                     });
                 </script>
             </form>
+                                    </div>
+<div class="col-md-3">
+
+</div>
+</body>
+</div>
         </body>
     <?php }?>
-</html>

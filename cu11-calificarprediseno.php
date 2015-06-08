@@ -8,20 +8,14 @@ class c_calificar_prediseno extends super_controller {
 
         $prediseno = new prediseno($this->post);
         if (is_empty($prediseno)) {
-            throw_exception("Error, falta seleccionar prediseño");
+            $this->engine->assign(alerta, "ms.alertify_error()");
         }
         $prediseno->set('gerente', $this->session['id']);
 
         $this->orm->connect();
         $this->orm->update_data("calificar", $prediseno);
         $this->orm->close();
-
-        $this->type_warning = "success";
-        $this->msg_warning = "calificacion exitosa";
-
-        $this->temp_aux = 'message.tpl';
-        $this->engine->assign('type_warning', $this->type_warning);
-        $this->engine->assign('msg_warning', $this->msg_warning);
+        $this->engine->assign(alerta, "ms.alertify_calificar_prediseno()");
     }
 
   
@@ -43,11 +37,7 @@ class c_calificar_prediseno extends super_controller {
         $this->orm->close();
 
         if (!isset($viabilidad)) {
-            $this->error = 1;
-            $this->msg_warning = "No hay prediseños para calificar";
-            $this->engine->assign('type_warning', $this->type_warning);
-            $this->engine->assign('msg_warning', $this->msg_warning);
-            $this->temp_aux = 'message.tpl';
+            $this->engine->assign(alerta, "ms.alertify_calificar_prediseno_error()");;
             header('Location: opciones_gerente.php');
         }
 
@@ -55,9 +45,11 @@ class c_calificar_prediseno extends super_controller {
         $this->engine->assign('dispositivo', $dispositivo);
         $this->engine->assign('software', $software);
         $this->engine->assign('title', 'calificar prediseño');
-
+        $this->engine->display('header.tpl');
+        $this->engine->display('opciones_gerente.tpl');
         $this->engine->display($this->temp_aux);
         $this->engine->display('cu11-calificarprediseno.tpl');
+        $this->engine->display('footer.tpl');
     }
 
     public function run() {

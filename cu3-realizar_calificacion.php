@@ -15,28 +15,23 @@ class c_realizar_calificacion extends super_controller {
         $this->orm->read_data(array("idea"), $options, $code);
         $ideas = $this->orm->get_objects("idea");
         if ($ideas[0]->get('miembro') == $this->session['id']) {
-            throw_exception("Usted propuso esta idea, por lo tanto no debería calificarla");
+            $this->engine->assign(alerta, "ms.alertify_error_calificacion()");
         } else {
             $calificacion->set('miembro', $this->session['id']);
         }
         $this->orm->insert_data("normal", $calificacion);
         $this->orm->close();
-        $this->type_warning = "success";
-        $this->msg_warning = "Idea Calificada correctamente";
-        $this->temp_aux = 'message.tpl';
-        $this->engine->assign('type_warning', $this->type_warning);
-        $this->engine->assign('msg_warning', $this->msg_warning);
+        $this->engine->assign(alerta, "ms.alertify_calificacion()");
     }
     
     public function verificarreunion($idea) {
         if (is_empty($idea)) {
-            $this->type_warning = "warning";
-            throw_exception("No existen reuniones para hoy");
+            $this->engine->assign(alerta, "ms.alertify_reunion_calificacion()");
         }
     }
     
     public function verificar_completitud($calificacion) {
-        if (is_empty($calificacion->get('valor'))) throw_exception("Ingrese una calificacion");
+        if (is_empty($calificacion->get('valor'))) $this->engine->assign(alerta, "ms.alertify_error()");
         //elseif (is_empty($calificacion->get('idea'))) throw_exception("Seleccione una idea");
     }
     

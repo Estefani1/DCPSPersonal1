@@ -16,16 +16,17 @@ class c_proponeridea extends super_controller {
         $this->orm->connect();
         $this->orm->insert_data("normal", $idea);
         $this->orm->close();
-        $this->type_warning = "success";
-        $this->msg_warning = "Idea propuesta correctamente";
-        $this->temp_aux = 'message.tpl';
-        $this->engine->assign('type_warning', $this->type_warning);
-        $this->engine->assign('msg_warning', $this->msg_warning);
+        //$this->type_warning = "ms.alertify()";
+        //$this->msg_warning = "Idea propuesta correctamente";
+        //$this->temp_aux = 'message.tpl';
+        //$this->engine->assign('type_warning', $this->type_warning);
+        //$this->engine->assign('msg_warning', $this->msg_warning);
+        $this->engine->assign(alerta2, "ms.alertify_proponer_idea()");
     }
     
     public function verificar_completitud($idea) {
         if (is_empty($idea->get('nombre')) || is_empty($idea->get('descripcion')) || ($idea->get('necesidad') == "Seleccione necesidad")) {
-            throw_exception("Campos incompletos");
+            $this->engine->assign(alerta2, "ms.alertify_error()");
         }
     }
     
@@ -37,7 +38,7 @@ class c_proponeridea extends super_controller {
         $cidea = $this->orm->get_objects("idea");
         $this->orm->close();
         if (!is_empty($cidea)){
-            throw_exception("Nombre de idea ya esta en uso");
+            $this->engine->assign(alerta2, "ms.alertify_nombre_usado()");
         }
     }
     

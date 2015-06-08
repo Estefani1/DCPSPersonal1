@@ -21,7 +21,7 @@ class c_evaluar_viabilidad extends super_controller {
             $message4 = "Por favor ingrese la causa";
         }
         if (!is_empty($message1) || !is_empty($message2) || !is_empty($message3) || !is_empty($message4))
-            throw_exception($message1 . $message2 . $message3 . $message4);
+            $this->engine->assign(alerta, "ms.alertify_error()");
 
         $viabilidad->set('analista', $this->session['id']);
         //---Obtengo la idea del prediseño que seleccone
@@ -54,12 +54,7 @@ class c_evaluar_viabilidad extends super_controller {
         $this->orm->close();
 
 
-        $this->type_warning = "success";
-        $this->msg_warning = "asiganacion exitosa";
-
-        $this->temp_aux = 'message.tpl';
-        $this->engine->assign('type_warning', $this->type_warning);
-        $this->engine->assign('msg_warning', $this->msg_warning);
+        $this->engine->assign(alerta, "ms.alertify_asignar_viabilidad()");
     }
 
     public function selectprediseno() {
@@ -74,8 +69,11 @@ class c_evaluar_viabilidad extends super_controller {
     public function display() {
         $this->selectprediseno();
         $this->engine->assign('title', 'Evaluar viabilidad');
+        $this->engine->display('header.tpl');
+        $this->engine->display('opciones_analista.tpl');
         $this->engine->display($this->temp_aux);
         $this->engine->display('cu10-asignar_viabilidad.tpl');
+        $this->engine->display('footer.tpl');
     }
 
     public function run() {
