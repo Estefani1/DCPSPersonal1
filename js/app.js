@@ -62,6 +62,18 @@ managerScreen = {
     
     alertify_asignar_viabilidad: function(){
         alertify.log("Asignacion exitosa", "Success", 10000);      
+    },
+    
+    alertify_calificar_prediseno: function(){
+        alertify.log("Calificacion exitosa", "Success", 10000);      
+    },
+    
+    alertify_calificar_prediseno_error: function(){
+        alertify.log("No hay predisenos para calificar", "Error", 10000);      
+    },
+    
+    alertify_modificar_idea: function(){
+        alertify.log("Modificacion de la idea exitosa", "Success", 10000);      
     }
     
 };

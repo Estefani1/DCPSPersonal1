@@ -1,51 +1,36 @@
-
-<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <script lang="javascript" src="js/jquery-2.1.3.min.js"></script>
-    <body>    
+    <body {if isset($alerta)} onload="{$alerta}"{/if}>    
         <form action="{$gvar.l__global}cu12-Modificar_idea.php?option=Modificaridea" method="post">
+             <div class="col-md-4 col-md-offset-3 fondo tr">
 
-            Modificar idea:
-            <table>
-                <tbody>
-                    <tr>
-                        <td><select name="ddl" id="mySelect" onchange="myFunction()" >
+            <b>Modificar idea:</b>
+            <select class="form-control" name="ddl" id="mySelect" onchange="myFunction()" >
                                 <option > Seleccione idea</option>
                                 {section loop=$ide name=i }
 
                                     <option value= {$ide[i]->get('nombre')}>  {$ide[i]->get('nombre')}</option>                 
                                 {/section}
 
-                            </select></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <a  class="des" id="desc"> Descripcion actual :</a> 
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>  
+                            </select>
+                    
+                                <a class="des" id="desc"><b>Descripcion actual:</b></a> 
+                         
                             {section loop=$ide name=i }
                                 <a  class="idea_descripcion" id="idea_descripcion_{$ide[i]->get('nombre')}" > {$ide[i]->get('descripcion')}</a>                 
                             {/section}
 
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="des1" id="desc1">
+                        
+                        <div class="des1" id="desc1">
                             <a >Nueva descripcion:</a> </br>
 
-                            <textarea id="textAread_id" name = "descripcion" rows = "8" cols = "40" class = "input" WRAP ></textarea> </br>
+                            <textarea class="form-control" id="textAread_id" name = "descripcion" rows = "8" cols = "40" class = "input" WRAP ></textarea> </br>
                             <!-- <input type="button" onclick="val()" value="Modificar">   -->
-                            <input type="submit" value="Modificar" />
+                            <input class="btn btn-primary" type="submit" value="Modificar" />
 
 
-                        </td>
-
-
-                    </tr>
-
-                </tbody>
-            </table>
+                        </div>
+ 
 
             <script>
                 function myFunction() {
@@ -67,5 +52,12 @@
                 });
             </script>
         </form>
+                            
+ </div>
+<div class="col-md-3">
+
+</div>
+</body>
+</div>
     </body>
 </html>
