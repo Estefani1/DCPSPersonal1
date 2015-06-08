@@ -61,7 +61,7 @@ managerScreen = {
     },
     
     alertify_registrar_prediseno_error: function(){
-        alertify.log("No hay ideas calificadas", "Success", 10000);      
+        alertify.log("No hay ideas calificadas", "Error", 10000);      
     },
     
     alertify_asignar_viabilidad: function(){
