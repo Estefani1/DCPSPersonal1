@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-06-08 04:18:08
+<?php /* Smarty version Smarty-3.0.9, created on 2015-06-09 18:29:55
          compiled from "C:/wamp/www/ProyectoDCPS/templates\cu5-definir_dispositivo.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:187375574fb60e012d9-02143433%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_smarty_tpl->decodeProperties(array (
     '878f70a66e4ecda48f762d206aff2b977ec6eaa2' => 
     array (
       0 => 'C:/wamp/www/ProyectoDCPS/templates\\cu5-definir_dispositivo.tpl',
-      1 => 1433729835,
+      1 => 1433867304,
       2 => 'file',
     ),
   ),
